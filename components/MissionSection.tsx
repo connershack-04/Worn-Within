@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const MissionSection: React.FC = () => {
   return (
@@ -12,24 +13,23 @@ export const MissionSection: React.FC = () => {
               Our Purpose
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-6">
-              Rooted in the Word, <br />
-              Washed in the Sea.
+              Faith in Every Element.
             </h2>
             <div className="space-y-6 text-stone-600 leading-relaxed">
               <p>
-                Worn Within wasn't created in a boardroom; it started on a misty morning waiting for the swell to pick up. We realized that the peace we feel on the water is a direct reflection of the peace found in scripture.
+                Worn Within isn't confined to the coastline. It was born from a reverence for all of creation—from the silence of a snow-covered treeline to the rhythm of a concrete bowl or the roar of the ocean.
               </p>
               <p>
-                We wanted to create apparel that speaks quietly but boldly. No loud graphics, just quality, sustainable fabrics that carry a hidden reminder of who you are and whose you are.
+                We believe worship happens in movement. Whether you're carving fresh powder on the mountain, dropping into a half-pipe, or waiting for the next set, our apparel is designed to endure the journey.
               </p>
               <p>
-                Every garment features a discreet reference to a scripture verse—a personal grounding point for your day, whether you're at the office or checking the break.
+                Built for the skate park, the slopes, and the sea, every garment carries a quiet, durable reminder of the Word. We create goods that help you wear your faith outward, wherever the wild leads you.
               </p>
             </div>
             <div className="mt-8">
-              <a href="#about" className="text-stone-900 font-medium underline underline-offset-8 hover:text-sage-800 transition-colors">
+              <Link to="/mission" className="text-stone-900 font-medium underline underline-offset-8 hover:text-sage-800 transition-colors">
                 Read our full story
-              </a>
+              </Link>
             </div>
           </div>
 

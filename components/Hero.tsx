@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
   return (
@@ -7,12 +8,12 @@ export const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <img 
-          src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=2500&q=80" 
-          alt="Coastal Surf Aerial View" 
+          src="https://images.unsplash.com/photo-1494548162494-384bba4ab999?auto=format&fit=crop&w=2500&q=80"
+          alt="California Coastline Big Sur" 
           className="w-full h-full object-cover"
         />
         {/* Overlay for text readability - Adjusted opacity */}
-        <div className="absolute inset-0 bg-stone-900/40 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-stone-900/30 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-stone-900/30"></div>
       </div>
 
@@ -28,13 +29,13 @@ export const Hero: React.FC = () => {
           Built for the coast, designed for the soul.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a 
-            href="#shop"
+          <Link 
+            to="/shop"
             className="group relative inline-flex items-center justify-center px-10 py-4 bg-white text-stone-900 overflow-hidden transition-all duration-300 hover:bg-stone-100 shadow-lg hover:shadow-xl"
           >
             <span className="font-medium tracking-widest uppercase text-sm">Shop Collection</span>
             <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

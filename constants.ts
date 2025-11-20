@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Shop", href: "#shop" },
-  { label: "Mission", href: "#mission" },
-  { label: "Stories", href: "#stories" },
+  { label: "Shop", href: "/shop" },
+  { label: "Mission", href: "/mission" },
+  { label: "Stories", href: "/stories" },
 ];

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
@@ -24,10 +25,10 @@ export const Footer: React.FC = () => {
           <div>
             <h5 className="text-stone-100 font-medium mb-6 tracking-wider uppercase text-xs">Shop</h5>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="hover:text-stone-100 transition-colors">New Arrivals</a></li>
-              <li><a href="#" className="hover:text-stone-100 transition-colors">Men's</a></li>
-              <li><a href="#" className="hover:text-stone-100 transition-colors">Women's</a></li>
-              <li><a href="#" className="hover:text-stone-100 transition-colors">Accessories</a></li>
+              <li><Link to="/shop" className="hover:text-stone-100 transition-colors">New Arrivals</Link></li>
+              <li><Link to="/shop" className="hover:text-stone-100 transition-colors">Men's</Link></li>
+              <li><Link to="/shop" className="hover:text-stone-100 transition-colors">Women's</Link></li>
+              <li><Link to="/shop" className="hover:text-stone-100 transition-colors">Accessories</Link></li>
             </ul>
           </div>
 
@@ -35,9 +36,9 @@ export const Footer: React.FC = () => {
           <div>
             <h5 className="text-stone-100 font-medium mb-6 tracking-wider uppercase text-xs">Company</h5>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="hover:text-stone-100 transition-colors">Our Mission</a></li>
-              <li><a href="#" className="hover:text-stone-100 transition-colors">Sustainability</a></li>
-              <li><a href="#" className="hover:text-stone-100 transition-colors">Statement of Faith</a></li>
+              <li><Link to="/mission" className="hover:text-stone-100 transition-colors">Our Mission</Link></li>
+              <li><Link to="/mission" className="hover:text-stone-100 transition-colors">Sustainability</Link></li>
+              <li><Link to="/mission" className="hover:text-stone-100 transition-colors">Statement of Faith</Link></li>
               <li><a href="#" className="hover:text-stone-100 transition-colors">Contact Us</a></li>
             </ul>
           </div>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,10 @@ export const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   return (
     <nav 
@@ -35,21 +41,23 @@ export const Navbar: React.FC = () => {
 
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center md:justify-start justify-center w-full md:w-auto absolute md:relative left-0 md:left-auto">
-            <span className="font-serif text-2xl tracking-wider text-stone-900 font-bold">
+            <Link to="/" className="font-serif text-2xl tracking-wider text-stone-900 font-bold">
               WORN WITHIN
-            </span>
+            </Link>
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-12">
             {NAV_ITEMS.map((item) => (
-              <a 
+              <Link 
                 key={item.label}
-                href={item.href} 
-                className="text-sm font-medium text-stone-600 hover:text-sage-800 transition-colors uppercase tracking-widest"
+                to={item.href} 
+                className={`text-sm font-medium transition-colors uppercase tracking-widest ${
+                  location.pathname === item.href ? 'text-sage-800' : 'text-stone-600 hover:text-sage-800'
+                }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -72,14 +80,13 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden absolute top-full left-0 w-full bg-stone-50 border-b border-stone-200 py-4 px-4 shadow-lg">
           <div className="flex flex-col space-y-4">
             {NAV_ITEMS.map((item) => (
-              <a 
+              <Link 
                 key={item.label}
-                href={item.href} 
+                to={item.href} 
                 className="text-lg font-medium text-stone-800 hover:text-sage-800"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
