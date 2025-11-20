@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link 
             to="/shop"
-            className="group relative inline-flex items-center justify-center px-10 py-4 bg-white text-stone-900 overflow-hidden transition-all duration-300 hover:bg-stone-100 shadow-lg hover:shadow-xl"
+            className="group relative inline-flex items-center justify-center px-10 py-4 bg-white text-stone-900 overflow-hidden transition-all duration-300 hover:bg-stone-100 active:scale-95 shadow-lg hover:shadow-xl"
           >
             <span className="font-medium tracking-widest uppercase text-sm">Shop Collection</span>
             <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />

@@ -16,9 +16,14 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
+
+  const handleMobileLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <nav 
@@ -30,18 +35,19 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden">
+          <div className="flex md:hidden z-50">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-stone-800 hover:text-sage-800 transition-colors"
+              className="text-stone-800 hover:text-sage-800 transition-colors p-2 -ml-2"
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center md:justify-start justify-center w-full md:w-auto absolute md:relative left-0 md:left-auto">
-            <Link to="/" className="font-serif text-2xl tracking-wider text-stone-900 font-bold">
+          <div className="flex-shrink-0 flex items-center md:justify-start justify-center w-full md:w-auto absolute md:relative left-0 md:left-auto pointer-events-none md:pointer-events-auto">
+            <Link to="/" className="font-serif text-2xl tracking-wider text-stone-900 font-bold pointer-events-auto">
               WORN WITHIN
             </Link>
           </div>
@@ -62,9 +68,9 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Cart Icon */}
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-end z-50">
             <button 
-              className="text-stone-800 hover:text-sage-800 transition-colors flex items-center gap-2"
+              className="text-stone-800 hover:text-sage-800 transition-colors flex items-center gap-2 p-2 -mr-2"
               onClick={() => alert("Cart functionality coming soon!")}
             >
               <span className="hidden sm:block text-sm font-medium">Cart</span>
@@ -77,13 +83,16 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-stone-50 border-b border-stone-200 py-4 px-4 shadow-lg">
-          <div className="flex flex-col space-y-4">
+        <div className="md:hidden fixed inset-0 top-[72px] bg-stone-50/98 backdrop-blur-xl z-40 flex flex-col p-6 animate-in slide-in-from-top-5 duration-200">
+          <div className="flex flex-col space-y-6 mt-4">
             {NAV_ITEMS.map((item) => (
               <Link 
                 key={item.label}
                 to={item.href} 
-                className="text-lg font-medium text-stone-800 hover:text-sage-800"
+                onClick={handleMobileLinkClick}
+                className={`text-2xl font-serif font-medium pb-4 border-b border-stone-200 ${
+                  location.pathname === item.href ? 'text-sage-800' : 'text-stone-800'
+                }`}
               >
                 {item.label}
               </Link>

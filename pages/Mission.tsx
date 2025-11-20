@@ -25,23 +25,23 @@ export const Mission: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-12 my-16">
              <div>
-               <h3 className="font-serif text-2xl mb-4 text-sage-800">The Elements</h3>
+               <h3 className="font-serif text-2xl mb-4 text-sage-800">The Outdoors</h3>
                <p className="text-stone-600">
-                 Whether you're checking the surf or heading to the mountains, our gear is designed to handle the elements—and point back to the One who made them.
+                 From the break at Rincon to the trails of the Sierras, the outdoors is our sanctuary. It's where we disconnect from the noise and reconnect with the Spirit. Our apparel is built to withstand the elements—sand, salt, snow, and stone—so you can focus on the experience.
                </p>
              </div>
              <div>
-               <h3 className="font-serif text-2xl mb-4 text-sage-800">The Message</h3>
+               <h3 className="font-serif text-2xl mb-4 text-sage-800">The Word</h3>
                <p className="text-stone-600">
-                 Subtle by design. We want our clothing to bring glory to the Creator without the noise. We place scripture references on hems, tags, and inner linings—personal reminders kept close to the heart.
+                 Every piece we create is rooted in Scripture. Not in a loud, billboard way, but with subtle, intentional design. We place references on hems, tags, and inner linings—reminders for you, and conversation starters for others.
                </p>
              </div>
           </div>
 
           <div className="bg-stone-100 p-8 md:p-12 rounded-lg my-12 border-l-4 border-sage-800">
-            <h3 className="font-serif text-2xl mb-4">Stewarding Creation</h3>
+            <h3 className="font-serif text-2xl mb-4">Sustainability Promise</h3>
             <p className="text-stone-700 mb-0">
-              We seek to use only the best products that honor and preserve God's beautiful creation. Taking care of the earth is our way of respecting the Artist behind it.
+              We are stewards of this earth. That's why we use 100% organic cotton and recycled polyester in our garments. We partner with manufacturers who pay fair wages and treat their workers with dignity, reflecting the Kingdom in our supply chain.
             </p>
           </div>
         </div>

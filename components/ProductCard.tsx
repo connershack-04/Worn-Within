@@ -9,11 +9,12 @@ interface ProductCardProps {
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation(); // Prevent event bubbling
     alert(`Added ${product.name} to cart.`);
   };
 
   return (
-    <div className="group flex flex-col">
+    <div className="group flex flex-col cursor-pointer">
       <div className="relative aspect-[3/4] overflow-hidden bg-stone-200 mb-4">
         <img 
           src={product.image} 
@@ -22,11 +23,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           loading="lazy"
         />
         
-        {/* Quick Add Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        {/* Quick Add Overlay - Always visible on Mobile, Slide up on Desktop */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-0 lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-300">
           <button 
             onClick={handleAddToCart}
-            className="w-full bg-stone-50/90 backdrop-blur text-stone-900 py-3 px-4 flex items-center justify-center gap-2 hover:bg-stone-900 hover:text-stone-50 transition-colors uppercase text-xs tracking-widest font-medium"
+            className="w-full bg-stone-50/95 backdrop-blur text-stone-900 py-3 px-4 flex items-center justify-center gap-2 hover:bg-stone-900 hover:text-stone-50 active:scale-95 transition-all uppercase text-xs tracking-widest font-medium shadow-sm"
           >
             <Plus size={16} />
             Add to Cart

@@ -3,19 +3,19 @@ import React from 'react';
 const STORIES = [
   {
     id: 1,
-    title: "Dawn Patrol: Finding God in Nature",
-    excerpt: "No sermons, just waves. A look at how a few early morning hours in the Pacific helps this crew slow down and reconnect with what actually matters.",
+    title: "Morning Patrol: Finding Stillness in the Swell",
+    excerpt: "Before the world wakes up, there is a quiet on the water that speaks louder than any sermon. Join us for a session at dawn.",
     image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80",
     date: "October 12, 2023",
     category: "Surf"
   },
   {
     id: 2,
-    title: "GCU Skate Ministry",
-    excerpt: "Jaden Cox is taking the Great Commission to the skate park. Leading the GCU Skate Ministry, he’s turning Phoenix’s Desert West park into a mission field, sharing the Word with locals one session at a time.",
-    image: "https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?auto=format&fit=crop&w=800&q=80",
-    date: "October 28, 2023",
-    category: "Skate"
+    title: "The Theology of the Ascent",
+    excerpt: "Climbing isn't just physical. It's a lesson in trust, endurance, and the view from the top that reminds us how small we are.",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    date: "September 28, 2023",
+    category: "Mountain"
   }
 ];
 
